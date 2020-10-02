@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.rxjava2.android.samples.R;
 import com.rxjava2.android.samples.ui.operators.AsyncSubjectExampleActivity;
 import com.rxjava2.android.samples.ui.operators.BehaviorSubjectExampleActivity;
@@ -16,6 +18,7 @@ import com.rxjava2.android.samples.ui.operators.DelayExampleActivity;
 import com.rxjava2.android.samples.ui.operators.DisposableExampleActivity;
 import com.rxjava2.android.samples.ui.operators.DistinctExampleActivity;
 import com.rxjava2.android.samples.ui.operators.FilterExampleActivity;
+import com.rxjava2.android.samples.ui.operators.FlatMapActivity;
 import com.rxjava2.android.samples.ui.operators.FlowableExampleActivity;
 import com.rxjava2.android.samples.ui.operators.IntervalExampleActivity;
 import com.rxjava2.android.samples.ui.operators.LastOperatorExampleActivity;
@@ -38,8 +41,6 @@ import com.rxjava2.android.samples.ui.operators.ThrottleLastExampleActivity;
 import com.rxjava2.android.samples.ui.operators.TimerExampleActivity;
 import com.rxjava2.android.samples.ui.operators.WindowExampleActivity;
 import com.rxjava2.android.samples.ui.operators.ZipExampleActivity;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class OperatorsActivity extends AppCompatActivity {
 
@@ -117,6 +118,10 @@ public class OperatorsActivity extends AppCompatActivity {
         startActivity(new Intent(OperatorsActivity.this, ConcatExampleActivity.class));
     }
 
+    public void startFlatMapActivity(View view) {
+        startActivity(new Intent(OperatorsActivity.this, FlatMapActivity.class));
+    }
+
     public void startMergeActivity(View view) {
         startActivity(new Intent(OperatorsActivity.this, MergeExampleActivity.class));
     }
@@ -150,7 +155,7 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startThrottleFirstActivity(View view) {
-        startActivity(new Intent(OperatorsActivity.this,ThrottleFirstExampleActivity.class));
+        startActivity(new Intent(OperatorsActivity.this, ThrottleFirstExampleActivity.class));
     }
 
     public void startThrottleLastActivity(View view) {
@@ -162,11 +167,11 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startWindowActivity(View view) {
-        startActivity(new Intent(OperatorsActivity.this,WindowExampleActivity.class));
+        startActivity(new Intent(OperatorsActivity.this, WindowExampleActivity.class));
     }
 
     public void startDelayActivity(View view) {
-        startActivity(new Intent(OperatorsActivity.this,DelayExampleActivity.class));
+        startActivity(new Intent(OperatorsActivity.this, DelayExampleActivity.class));
     }
 
     public void startSwitchMapActivity(View view) {

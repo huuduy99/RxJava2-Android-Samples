@@ -35,7 +35,6 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         searchView = findViewById(R.id.searchView);
         textViewResult = findViewById(R.id.textViewResult);
-
         setUpSearchObservable();
     }
 

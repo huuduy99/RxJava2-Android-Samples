@@ -87,6 +87,10 @@
         <activity
             android:name=".ui.operators.ConcatExampleActivity"
             android:label="@string/concat" />
+
+        <activity
+            android:name=".ui.operators.FlatMapActivity"
+            android:label="@string/flatMap" />
         <activity
             android:name=".ui.operators.MergeExampleActivity"
             android:label="@string/merge" />
@@ -133,11 +137,13 @@
             android:name=".ui.operators.SwitchMapExampleActivity"
             android:label="@string/switch_map" />
 
-        <activity android:name=".ui.operators.TakeWhileExampleActivity"
-            android:label="@string/take_while"/>
+        <activity
+            android:name=".ui.operators.TakeWhileExampleActivity"
+            android:label="@string/take_while" />
 
-        <activity android:name=".ui.operators.TakeUntilExampleActivity"
-            android:label="@string/take_until"/>
+        <activity
+            android:name=".ui.operators.TakeUntilExampleActivity"
+            android:label="@string/take_until" />
     </application>
 
 </manifest>

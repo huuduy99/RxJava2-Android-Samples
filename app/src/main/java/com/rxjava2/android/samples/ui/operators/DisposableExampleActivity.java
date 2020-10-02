@@ -7,12 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.rxjava2.android.samples.R;
 import com.rxjava2.android.samples.utils.AppConstant;
 
+import java.util.ArrayList;
 import java.util.concurrent.Callable;
 
-import androidx.appcompat.app.AppCompatActivity;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -43,6 +45,7 @@ public class DisposableExampleActivity extends AppCompatActivity {
                 doSomeWork();
             }
         });
+        
     }
 
     @Override
@@ -60,8 +63,7 @@ public class DisposableExampleActivity extends AppCompatActivity {
                 // Run on a background thread
                 .subscribeOn(Schedulers.io())
                 // Be notified on the main thread
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(new DisposableObserver<String>() {
+                .observeOn(AndroidSchedulers.mainThread()).subscribeWith(new DisposableObserver<String>() {
                     @Override
                     public void onComplete() {
                         textView.append(" onComplete");

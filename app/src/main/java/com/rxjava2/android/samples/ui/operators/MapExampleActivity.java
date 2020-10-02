@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.rxjava2.android.samples.R;
 import com.rxjava2.android.samples.model.ApiUser;
 import com.rxjava2.android.samples.model.User;
@@ -14,7 +16,6 @@ import com.rxjava2.android.samples.utils.Utils;
 
 import java.util.List;
 
-import androidx.appcompat.app.AppCompatActivity;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -49,25 +50,23 @@ public class MapExampleActivity extends AppCompatActivity {
     }
 
     /*
-    * Here we are getting ApiUser Object from api server
-    * then we are converting it into User Object because
-    * may be our database support User Not ApiUser Object
-    * Here we are using Map Operator to do that
-    */
+     * Here we are getting ApiUser Object from api server
+     * then we are converting it into User Object because
+     * may be our database support User Not ApiUser Object
+     * Here we are using Map Operator to do that
+     */
     private void doSomeWork() {
         getObservable()
                 // Run on a background thread
                 .subscribeOn(Schedulers.io())
                 // Be notified on the main thread
-                .observeOn(AndroidSchedulers.mainThread())
-                .map(new Function<List<ApiUser>, List<User>>() {
+                .observeOn(AndroidSchedulers.mainThread()).map(new Function<List<ApiUser>, List<User>>() {
 
-                    @Override
-                    public List<User> apply(List<ApiUser> apiUsers) {
-                        return Utils.convertApiUserListToUserList(apiUsers);
-                    }
-                })
-                .subscribe(getObserver());
+            @Override
+            public List<User> apply(List<ApiUser> apiUsers) {
+                return Utils.convertApiUserListToUserList(apiUsers);
+            }
+        }).subscribe(getObserver());
     }
 
     private Observable<List<ApiUser>> getObservable() {
